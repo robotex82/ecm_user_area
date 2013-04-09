@@ -13,7 +13,7 @@ end
 class ActionController::TestCase
   module Behavior
     def process_with_default_locale(action, parameters = nil, session = nil, flash = nil, http_method = 'GET')
-      parameters = { :i18n_locale => I18n.default_locale }.merge( parameters || {} )
+      parameters = { :i18n_locale => I18n.locale }.merge( parameters || {} )
       process_without_default_locale(action, parameters, session, flash, http_method)
     end
     alias_method_chain :process, :default_locale
@@ -22,7 +22,7 @@ end
 
 module ActionDispatch::Assertions::RoutingAssertions
   def assert_recognizes_with_default_locale(expected_options, path, extras={}, message=nil)
-    expected_options = { :i18n_locale => I18n.default_locale.to_s }.merge( expected_options || {} )
+    expected_options = { :i18n_locale => I18n.locale.to_s }.merge( expected_options || {} )
     assert_recognizes_without_default_locale(expected_options, path, extras, message)
   end
   alias_method_chain :assert_recognizes, :default_locale

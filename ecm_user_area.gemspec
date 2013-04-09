@@ -16,7 +16,11 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
 
   s.add_dependency "rails", "~> 3.2.13"
+  s.add_dependency "devise"
+  s.add_dependency "devise-i18n"
+  s.add_dependency "simple_form"
 
+  # Development Database
   s.add_development_dependency "sqlite3"
 
   # Development Server
@@ -30,6 +34,9 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'sass-rails'
   s.add_development_dependency 'coffee-rails'
   s.add_development_dependency 'i18n_routing'
+  s.add_development_dependency 'therubyracer'
+  s.add_development_dependency 'less-rails'
+  s.add_development_dependency 'twitter-bootstrap-rails'
 
   # Localization
   s.add_development_dependency 'localeapp'

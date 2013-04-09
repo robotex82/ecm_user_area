@@ -11,6 +11,8 @@ require "sprockets/railtie"
 Bundler.require
 require "activeadmin"
 require "i18n_routing"
+require "less-rails"
+require "twitter-bootstrap-rails"
 require "ecm_user_area"
 
 module Dummy
@@ -39,7 +41,7 @@ module Dummy
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     config.i18n.available_locales = [ :de, :en ]
-    config.i18n.default_locale = :de
+    config.i18n.default_locale = :en
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"

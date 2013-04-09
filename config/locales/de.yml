@@ -1,1 +1,26 @@
 de:
+  activerecord:
+    attributes:
+      user:
+        created_at: Erstellt am
+        current_password: Aktuelles Passwort
+        current_sign_in_at: Angemeldet seit
+        email: E-Mail
+        last_sign_in_at: Zuletzt angemeldet
+        last_sign_in_ip: IP Adresse
+        password: Passwort
+        password_confirmation: Passwort wiederholen
+        remember_me: merken?
+        sign_in_count: Anmeldungen
+    models:
+      user:
+        one: Benutzer
+        other: Benutzer
+  ecm:
+    user_area:
+      actions:
+        registration:
+          edit: Mein Account
+          new: Registrieren
+        sign_in: Anmelden
+        sign_out: Abmelden
