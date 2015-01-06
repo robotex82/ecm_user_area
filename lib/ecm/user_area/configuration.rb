@@ -9,8 +9,12 @@ module Ecm
         yield self
       end
 
-      # mattr_accessor :foo
-      # @@foo = nil
+      mattr_accessor :disable_registrations
+      @@disable_registrations = false
+
+      def self.registrations_disabled?
+        !!@@disable_registrations
+      end
     end
   end
 end

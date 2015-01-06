@@ -1,3 +1,3 @@
 Ecm::UserArea.configure do |config|
-  # config.foo = :bar
+  config.disable_registrations = false
 end

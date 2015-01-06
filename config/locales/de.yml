@@ -24,3 +24,7 @@ de:
           new: Registrieren
         sign_in: Anmelden
         sign_out: Abmelden
+      messages:
+        registrations_disabled: Derzeit sind Neuanmeldungen deaktiviert.
+  resources:
+    users: benutzer

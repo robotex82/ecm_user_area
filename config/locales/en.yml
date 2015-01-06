@@ -24,3 +24,7 @@ en:
           new: Register
         sign_in: Sign in
         sign_out: Sign out
+      messages:
+        registrations_disabled: Registrations are disabled at the moment.
+  resources:
+    users: users
