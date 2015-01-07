@@ -2,6 +2,15 @@ ActiveAdmin.register Role do
   # menu entry settings
   menu :parent => Proc.new { I18n.t('ecm.user_area.active_admin.menu') }.call
 
+  action_item :only => :index do
+    link_to(I18n.t('ecm.user_area.actions.update_engine_provided_roles'), update_engine_provided_roles_admin_roles_path)
+  end
+
+  collection_action :update_engine_provided_roles do
+    Ecm::UserArea::RoleCollector.call
+    redirect_to admin_roles_path
+  end
+
   index do
     column :name
     column :namespace

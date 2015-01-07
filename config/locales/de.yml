@@ -46,6 +46,7 @@ de:
           new: Registrieren
         sign_in: Anmelden
         sign_out: Abmelden
+        update_engine_provided_roles: Rollen aktualisieren
       active_admin:
         menu: Benutzerverwaltung
       messages:

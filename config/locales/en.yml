@@ -46,6 +46,7 @@ en:
           new: Register
         sign_in: Sign in
         sign_out: Sign out
+        update_engine_provided_roles: Updated roles
       active_admin:
         menu: User management
       messages:
