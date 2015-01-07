@@ -1,6 +1,14 @@
 en:
   activerecord:
     attributes:
+      role:
+        created_at: created at
+        description: description
+        enabled: enabled
+        identifier: identifier
+        name: name
+        namespace: namespace
+        updated_at: updated at
       user:
         created_at: created at
         current_password: current password
@@ -12,10 +20,24 @@ en:
         password_confirmation: password confirmation
         remember_me: remember me?
         sign_in_count: sign in count
+        user_roles: user roles
+      user_role:
+        active?: active
+        role: role
+        role_description: role description
+        role_name: name
+        valid_from: valid from
+        valid_to: valid to
     models:
+      role:
+        one: role
+        other: roles
       user:
         one: user
         other: users
+      user_role:
+        one: user role
+        other: user roles
   ecm:
     user_area:
       actions:
@@ -24,7 +46,14 @@ en:
           new: Register
         sign_in: Sign in
         sign_out: Sign out
+      active_admin:
+        menu: User management
       messages:
         registrations_disabled: Registrations are disabled at the moment.
+      roles:
+        user_admin:
+          name: User administrator
+        super_admin:
+          name: Super administrator
   resources:
     users: users

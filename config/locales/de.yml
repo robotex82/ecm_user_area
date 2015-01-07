@@ -1,6 +1,14 @@
 de:
   activerecord:
     attributes:
+      role:
+        created_at: Erstellt am
+        description: Beschreibung
+        enabled: Aktiv
+        identifier: Bezeichner
+        name: Name
+        namespace: Namensraum
+        updated_at: Aktualisiert am
       user:
         created_at: Erstellt am
         current_password: Aktuelles Passwort
@@ -12,10 +20,24 @@ de:
         password_confirmation: Passwort wiederholen
         remember_me: merken?
         sign_in_count: Anmeldungen
+        user_roles: Benutzerrollen
+      user_role:
+        active?: Aktiv
+        role: Rolle
+        role_description: Rollenbeschreibung
+        role_name: Name
+        valid_from: Gültig seit
+        valid_to: Gültig bis
     models:
+      role:
+        one: Rolle
+        other: Rollen
       user:
         one: Benutzer
         other: Benutzer
+      user_role:
+        one: Benutzerrolle
+        other: Benutzerrollen
   ecm:
     user_area:
       actions:
@@ -24,7 +46,15 @@ de:
           new: Registrieren
         sign_in: Anmelden
         sign_out: Abmelden
+      active_admin:
+        menu: Benutzerverwaltung
       messages:
         registrations_disabled: Derzeit sind Neuanmeldungen deaktiviert.
+      roles:
+        user_admin:
+          name: Benutzeradministrator
+        super_admin:
+          name: Superadministrator
+          description: Darf Rollen an andere Benutzer vergeben.
   resources:
     users: benutzer

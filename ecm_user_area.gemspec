@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
   s.add_dependency "devise"
   s.add_dependency "devise-i18n"
   s.add_dependency "simple_form"
+  s.add_dependency "pundit"
 
   # Development Database
   s.add_development_dependency "sqlite3"
@@ -53,4 +54,3 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'guard-rspec'
   s.add_development_dependency 'guard-bundler'
 end
-

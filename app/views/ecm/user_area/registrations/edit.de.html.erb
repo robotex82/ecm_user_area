@@ -20,6 +20,31 @@
   </div>
 <% end %>
 
+<h3>Meine Rollen</h3>
+
+<table class="table table-striped table-condensed">
+  <thead>
+    <tr>
+      <th><%= UserRole.human_attribute_name(:role_name) %></th>
+      <th><%= UserRole.human_attribute_name(:role_description) %></th>
+      <th><%= UserRole.human_attribute_name(:valid_from) %></th>
+      <th><%= UserRole.human_attribute_name(:valid_to) %></th>
+      <th><%= UserRole.human_attribute_name(:active?) %></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% resource.user_roles.each do |user_role| %>
+  <tr>
+    <td><%= user_role.role_name %></td>
+    <td><%= user_role.role_description %></td>
+    <td><%= l(user_role.valid_from) %></td>
+    <td><%= l(user_role.valid_to) %></td>
+    <td><%= t(user_role.active?) %></td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>
+
 <h3>Mein Konto kündigen</h3>
 
 <p>Unzufrieden? <%= link_to "Mein Konto kündigen", registration_path(resource_name), :data => { :confirm => "Sind Sie sicher?" }, :method => :delete, :class=>'btn btn-danger btn-mini' %>.</p>
