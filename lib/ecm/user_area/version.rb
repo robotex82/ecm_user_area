@@ -1,5 +1,5 @@
 module Ecm
   module UserArea
-    VERSION = "0.0.1.pre"
-  end  
+    VERSION = "1.0.0.pre"
+  end
 end
