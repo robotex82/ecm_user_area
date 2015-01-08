@@ -9,6 +9,7 @@ de:
         name: Name
         namespace: Namensraum
         updated_at: Aktualisiert am
+        user_roles: Benutzerrollen
       user:
         created_at: Erstellt am
         current_password: Aktuelles Passwort
@@ -20,12 +21,16 @@ de:
         password_confirmation: Passwort wiederholen
         remember_me: merken?
         sign_in_count: Anmeldungen
+        updated_at: Aktualisiert am
         user_roles: Benutzerrollen
       user_role:
         active?: Aktiv
+        created_at: Erstellt am
         role: Rolle
         role_description: Rollenbeschreibung
         role_name: Name
+        updated_at: Aktualisiert am
+        user: Benutzer
         valid_from: Gültig seit
         valid_to: Gültig bis
     models:

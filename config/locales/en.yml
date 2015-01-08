@@ -9,6 +9,7 @@ en:
         name: name
         namespace: namespace
         updated_at: updated at
+        user_roles: user roles
       user:
         created_at: created at
         current_password: current password
@@ -20,12 +21,16 @@ en:
         password_confirmation: password confirmation
         remember_me: remember me?
         sign_in_count: sign in count
+        updated_at: updated at
         user_roles: user roles
       user_role:
         active?: active
+        created_at: created at
         role: role
         role_description: role description
         role_name: name
+        updated_at: updated at
+        user: user
         valid_from: valid from
         valid_to: valid to
     models:
