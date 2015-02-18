@@ -1,16 +1,13 @@
 require 'rbac/role/base'
+require 'rbac/role/container/base'
 
 module Ecm
   module UserArea
-    module Roles
+    class Roles < Rbac::Role::Container::Base
       class UserAdmin < Rbac::Role::Base
       end
 
       class SuperAdmin < Rbac::Role::Base
-      end
-
-      def self.all
-        self.constants.select { |c| self.const_get(c).is_a? Class }.collect{ |klass| "#{self}::#{klass}"}.map(&:constantize).map(&:new)
       end
     end
   end

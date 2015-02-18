@@ -1,6 +1,14 @@
 de:
   activerecord:
     attributes:
+      permission:
+        created_at: Erstellt am
+        enabled: Aktiv
+        identifier: Bezeichner
+        name: Name
+        namespace: Namensraum
+        role_permissions: Rollenberechtigungen
+        updated_at: Aktualisiert am
       role:
         created_at: Erstellt am
         description: Beschreibung
@@ -10,6 +18,9 @@ de:
         namespace: Namensraum
         updated_at: Aktualisiert am
         user_roles: Benutzerrollen
+      role_permission:
+        role: Rolle
+        enabled: Aktiv
       user:
         created_at: Erstellt am
         current_password: Aktuelles Passwort
@@ -51,6 +62,7 @@ de:
           new: Registrieren
         sign_in: Anmelden
         sign_out: Abmelden
+        update_engine_provided_permissions: Berechtigungen aktualisieren
         update_engine_provided_roles: Rollen aktualisieren
       active_admin:
         menu: Benutzerverwaltung

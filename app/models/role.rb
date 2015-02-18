@@ -3,6 +3,15 @@ class Role < ActiveRecord::Base
   has_many :user_roles
   has_many :users, :through => :user_roles
 
+  has_many :role_permissions
+  has_many :enabled_role_permissions, :class_name => "RolePermission",
+                                      :conditions => [ 'role_permissions.enabled = ?', true ]
+  has_many :permissions, :through => :role_permissions
+  has_many :enabled_permissions, :through => :enabled_role_permissions,
+                                 :class_name => "Permission",
+                                 :source => :permission,
+                                 :conditions => [ 'permissions.enabled = ?', true ]
+
   # Attributes
   attr_accessible :description,
                   :enabled,
