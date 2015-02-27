@@ -4,10 +4,9 @@ module RailsTools
       I18n.locale = params[:i18n_locale]
     end
 
-    def default_url_options(options = {})
-      { :i18n_locale => I18n.locale }
+    def default_url_options(_options = {})
+      { i18n_locale: I18n.locale }
     end
-
 
     def self.included(base)
       base.before_filter :set_locale
@@ -15,10 +14,9 @@ module RailsTools
     end
 
     module ClassMethods
-      def self.default_url_options(options = {})
-        { :i18n_locale => I18n.locale }
+      def self.default_url_options(_options = {})
+        { i18n_locale: I18n.locale }
       end
     end
   end
 end
-

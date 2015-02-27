@@ -1,3 +1,7 @@
-class Ecm::UserArea::ConfirmationsController < Devise::ConfirmationsController
-  include RailsTools::I18nController
+module Ecm
+  module UserArea
+    class ConfirmationsController < Devise::ConfirmationsController
+      layout Ecm::UserArea::Configuration.layout
+    end
+  end
 end

@@ -4,7 +4,9 @@ class RolePermission < ActiveRecord::Base
   belongs_to :role
 
   # Attributes
-  attr_accessible :enabled,
-                  :permission_id,
-                  :role_id
+  if Rails::VERSION::MAJOR < 4
+    attr_accessible :enabled,
+                    :permission_id,
+                    :role_id
+  end
 end

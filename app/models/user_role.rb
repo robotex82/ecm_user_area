@@ -4,16 +4,22 @@ class UserRole < ActiveRecord::Base
   belongs_to :role
 
   # Attributes
-  attr_accessible :user_id,
-                  :role_id,
-                  :valid_from,
-                  :valid_to
+  if Rails::VERSION::MAJOR < 4
+    attr_accessible :user_id,
+                    :role_id,
+                    :valid_from,
+                    :valid_to
+  end
 
   # Callbacks
   after_initialize :set_defaults
 
   # Delegates
-  delegate :name, :description, :to => :role, :prefix => true
+  delegate :name, :description, to: :role, prefix: true
+
+  # Validations
+  validates :valid_from, presence: true
+  validates :valid_to, presence: true
 
   def active?
     valid_from < Time.zone.now && valid_to > Time.zone.now
@@ -22,9 +28,9 @@ class UserRole < ActiveRecord::Base
   private
 
   def set_defaults
-    if new_record?
-      self.valid_from = Time.zone.now
-      self.valid_to = Time.zone.parse('9999-12-31 23:59:59')
-    end
+    return if persisted?
+
+    self.valid_from = Time.zone.now
+    self.valid_to   = Time.zone.parse('9999-12-31 23:59:59')
   end
 end

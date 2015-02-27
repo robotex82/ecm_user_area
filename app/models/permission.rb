@@ -1,17 +1,19 @@
 class Permission < ActiveRecord::Base
   # Associations
   has_many :role_permissions
-  has_many :roles, :through => :role_permissions
+  has_many :roles, through: :role_permissions
 
   # Attributes
-  attr_accessible :description,
-                  :enabled,
-                  :identifier,
-                  :namespace
+  if Rails::VERSION::MAJOR < 4
+    attr_accessible :description,
+                    :enabled,
+                    :identifier,
+                    :namespace
+  end
 
   # Validations
-  validates :namespace, :presence => true
-  validates :identifier, :presence => true
+  validates :namespace, presence: true
+  validates :identifier, presence: true
 
   def qualified_identifier
     "#{namespace}/#{identifier}"
@@ -32,6 +34,6 @@ class Permission < ActiveRecord::Base
   private
 
   def i18n_namespace
-    "#{namespace}/permissions/#{identifier}".underscore.gsub("/", ".")
+    "#{namespace}/permissions/#{identifier}".underscore.gsub('/', '.')
   end
 end

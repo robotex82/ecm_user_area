@@ -2,7 +2,7 @@ module Rbac
   module Role
     class Base
       def namespace
-        self.class.to_s.deconstantize.underscore.gsub("/roles", "")
+        self.class.to_s.deconstantize.underscore.gsub('/roles', '')
       end
 
       def identifier
@@ -20,7 +20,7 @@ module Rbac
       private
 
       def i18n_namespace
-        self.class.to_s.underscore.gsub("/", ".")
+        self.class.to_s.underscore.gsub('/', '.')
       end
     end
   end

@@ -1,10 +1,10 @@
 class CreateUserRoles < ActiveRecord::Migration
   def change
     create_table :user_roles do |t|
-      t.references :role,      :null => false
-      t.references :user,      :null => false
-      t.timestamp :valid_from, :null => false
-      t.timestamp :valid_to,   :null => false
+      t.references :role,      null: false
+      t.references :user,      null: false
+      t.timestamp :valid_from, null: false
+      t.timestamp :valid_to,   null: false
 
       t.timestamps
     end

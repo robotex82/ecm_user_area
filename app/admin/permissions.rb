@@ -1,9 +1,11 @@
 ActiveAdmin.register Permission do
   # menu entry settings
-  menu :parent => Proc.new { I18n.t('ecm.user_area.active_admin.menu') }.call
+  menu parent: proc { I18n.t('ecm.user_area.active_admin.menu') }.call
 
-  action_item :only => :index do
-    link_to(I18n.t('ecm.user_area.actions.update_engine_provided_permissions'), update_engine_provided_permissions_admin_permissions_path)
+  action_item only: :index do
+    link_to(I18n.t('ecm.user_area.actions.update_engine_provided_permissions'),
+            update_engine_provided_permissions_admin_permissions_path
+    )
   end
 
   collection_action :update_engine_provided_permissions do
@@ -22,20 +24,20 @@ ActiveAdmin.register Permission do
     default_actions
   end
 
-  show :title => :to_s do
+  show title: :to_s do
     panel Permission.human_attribute_name(:role_permissions) do
-      table_for permission.role_permissions, :i18n => UserRole do
+      table_for permission.role_permissions, i18n: UserRole do
         column :role
         column :enabled
         column do |role_permission|
-          link_to(I18n.t('active_admin.view'), [:admin, role_permission], :class => "member_link view_link") +
-          link_to(I18n.t('active_admin.edit'), [:edit, :admin, role_permission], :class => "member_link edit_link")
+          link_to(I18n.t('active_admin.view'), [:admin, role_permission], class: 'member_link view_link') +
+            link_to(I18n.t('active_admin.edit'), [:edit, :admin, role_permission], class: 'member_link edit_link')
         end
       end # table_for
     end # panel
   end
 
-  sidebar Permission.human_attribute_name(:details), :only => :show do
+  sidebar Permission.human_attribute_name(:details), only: :show do
     attributes_table_for permission do
       row :namespace
       row :identifier

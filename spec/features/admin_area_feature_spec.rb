@@ -1,6 +1,6 @@
-#require 'spec_helper'
+# require 'spec_helper'
 
-#feature 'admin area' do
+# feature 'admin area' do
 #  include ActiveAdmin::SignInHelper
 
 #  describe 'home page access' do
@@ -47,5 +47,4 @@
 #      page.current_path.should eq('/en')
 #    end
 #  end # describe 'logout'
-#end # feature
-
+# end # feature

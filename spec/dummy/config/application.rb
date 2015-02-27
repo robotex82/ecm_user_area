@@ -1,19 +1,19 @@
 require File.expand_path('../boot', __FILE__)
 
 # Pick the frameworks you want:
-require "active_record/railtie"
-require "action_controller/railtie"
-require "action_mailer/railtie"
-require "active_resource/railtie"
-require "sprockets/railtie"
+require 'active_record/railtie'
+require 'action_controller/railtie'
+require 'action_mailer/railtie'
+require 'active_resource/railtie'
+require 'sprockets/railtie'
 # require "rails/test_unit/railtie"
 
 Bundler.require
-require "activeadmin"
-require "i18n_routing"
-require "less-rails"
-require "twitter-bootstrap-rails"
-require "ecm_user_area"
+require 'activeadmin'
+require 'i18n_routing'
+require 'less-rails'
+require 'twitter-bootstrap-rails'
+require 'ecm_user_area'
 
 module Dummy
   class Application < Rails::Application
@@ -40,11 +40,11 @@ module Dummy
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-    config.i18n.available_locales = [ :de, :en ]
+    config.i18n.available_locales = [:de, :en]
     config.i18n.default_locale = :en
 
     # Configure the default encoding used in templates for Ruby 1.9.
-    config.encoding = "utf-8"
+    config.encoding = 'utf-8'
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
@@ -71,9 +71,8 @@ module Dummy
 
     # Generators configuration
     config.generators do |g|
-      g.test_framework :rspec, :fixture_replacement => :factory_girl, :views => false, :helper => false
-      g.fixture_replacement :factory_girl, :dir => 'spec/factories'
+      g.test_framework :rspec, fixture_replacement: :factory_girl, views: false, helper: false
+      g.fixture_replacement :factory_girl, dir: 'spec/factories'
     end
   end
 end
-

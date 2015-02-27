@@ -1,6 +1,6 @@
 ActiveAdmin.register User do
   # menu entry settings
-  menu :parent => Proc.new { I18n.t('ecm.user_area.active_admin.menu') }.call
+  menu parent: proc { I18n.t('ecm.user_area.active_admin.menu') }.call
 
   index do
     column :email
@@ -13,7 +13,7 @@ ActiveAdmin.register User do
   filter :email
 
   form do |f|
-    f.inputs "User Details" do
+    f.inputs 'User Details' do
       f.input :email
       f.input :password
       f.input :password_confirmation
@@ -21,22 +21,22 @@ ActiveAdmin.register User do
     f.actions
   end
 
-  show :title => :to_s do
+  show title: :to_s do
     panel User.human_attribute_name(:user_roles) do
-      table_for user.user_roles, :i18n => UserRole do
+      table_for user.user_roles, i18n: UserRole do
         column :role
         column :active?
         column :valid_from
         column :valid_to
         column do |user_role|
-          link_to(I18n.t('active_admin.view'), [:admin, user_role], :class => "member_link view_link") +
-          link_to(I18n.t('active_admin.edit'), [:edit, :admin, user_role], :class => "member_link edit_link")
+          link_to(I18n.t('active_admin.view'), [:admin, user_role], class: 'member_link view_link') +
+            link_to(I18n.t('active_admin.edit'), [:edit, :admin, user_role], class: 'member_link edit_link')
         end
       end # table_for
     end # panel
   end
 
-  sidebar User.human_attribute_name(:details), :only => :show do
+  sidebar User.human_attribute_name(:details), only: :show do
     attributes_table_for user do
       row :email
       row :reset_password_sent_at
@@ -55,4 +55,4 @@ ActiveAdmin.register User do
       row :updated_at
     end
   end # sidebar
-end                                   
+end

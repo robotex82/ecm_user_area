@@ -9,11 +9,16 @@ module Ecm
         yield self
       end
 
-      mattr_accessor :disable_registrations
-      @@disable_registrations = false
+      mattr_accessor :disable_registrations do
+        false
+      end
+
+      mattr_accessor :layout do
+        'application'
+      end
 
       def self.registrations_disabled?
-        !!@@disable_registrations
+        disable_registrations
       end
     end
   end

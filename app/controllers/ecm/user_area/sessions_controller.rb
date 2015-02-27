@@ -1,3 +1,7 @@
-class Ecm::UserArea::SessionsController < Devise::SessionsController
-  include RailsTools::I18nController
+module Ecm
+  module UserArea
+    class SessionsController < Devise::SessionsController
+      layout Ecm::UserArea::Configuration.layout
+    end
+  end
 end

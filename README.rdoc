@@ -1,3 +1,40 @@
-= ECM Module Template
+= ECM User Area Module
+
+== Installation
+
+1. Add it to your bundle
+
+  # Gemfile
+  gem 'ecm_user_area'
+
+2. Bundle
+
+  $ bundle install
+  
+3. Install devise
+
+  $ rails generate devise:install
+
+4. Install the ECM User Area initializer
+
+  $ rails g ecm:user_area:install
+  
+5. Add databases tables
+
+  $ rake ecm_user_area_engine:install:migrations
+  $ rake db:migrate
+
+6. Add routes
+
+  # config/routes.rb
+  Ecm::UserArea::Routing.routes(self)
+
+== License
 
 This project rocks and uses MIT-LICENSE.
+
+== Warranty
+
+This software is provided "as is" and without any express or implied
+warranties, including, without limitation, the implied warranties of
+merchantability and fitness for a particular purpose.

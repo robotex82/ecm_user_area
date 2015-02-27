@@ -1,5 +1,7 @@
-module Ecm::UserAreaHelper
-  def render_user_navigation
-    render :partial => 'ecm/user_area/navigation'
+module Ecm
+  module UserAreaHelper
+    def render_user_navigation
+      render partial: 'ecm/user_area/navigation'
+    end
   end
 end

@@ -36,11 +36,10 @@ Dummy::Application.configure do
   config.assets.debug = true
 
   # Mailer settings
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
 
   config.action_mailer.smtp_settings = {
-    :address => "mail.arcor.de",
-    :port => 25,
+    address: 'mail.arcor.de',
+    port: 25
   }
 end
-

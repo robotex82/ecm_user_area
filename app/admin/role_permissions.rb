@@ -1,9 +1,9 @@
 ActiveAdmin.register RolePermission do
   # menu entry settings
-  menu :parent => Proc.new { I18n.t('ecm.user_area.active_admin.menu') }.call
+  menu parent: proc { I18n.t('ecm.user_area.active_admin.menu') }.call
 
   form do |f|
-    f.semantic_errors *f.object.errors.keys
+    f.semantic_errors(*f.object.errors.keys)
 
     f.inputs do
       f.input :role

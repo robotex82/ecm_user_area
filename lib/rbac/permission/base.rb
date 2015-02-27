@@ -2,7 +2,7 @@ module Rbac
   module Permission
     class Base
       def namespace
-        self.class.to_s.deconstantize.underscore.gsub("/permissions", "")
+        self.class.to_s.deconstantize.underscore.gsub('/permissions', '')
       end
 
       def identifier
@@ -20,7 +20,7 @@ module Rbac
       private
 
       def i18n_namespace
-        self.class.to_s.underscore.gsub("/", ".")
+        self.class.to_s.underscore.gsub('/', '.')
       end
     end
   end

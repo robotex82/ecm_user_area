@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :role do
-    name "MyString"
+    name 'MyString'
     enabled false
-    description "MyText"
+    description 'MyText'
   end
 end

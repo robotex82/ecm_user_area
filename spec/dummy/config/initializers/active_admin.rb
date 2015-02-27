@@ -1,11 +1,10 @@
 ActiveAdmin.setup do |config|
-
   # == Site Title
   #
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "Dummy"
+  config.site_title = 'Dummy'
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
@@ -57,7 +56,6 @@ ActiveAdmin.setup do |config|
   # within the controller.
   config.authentication_method = :authenticate_admin_user!
 
-
   # == Current User
   #
   # Active Admin will associate actions with the current
@@ -66,7 +64,6 @@ ActiveAdmin.setup do |config|
   # This setting changes the method which Active Admin calls
   # to return the currently logged in user.
   config.current_user_method = :current_admin_user
-
 
   # == Logging Out
   #
@@ -110,13 +107,11 @@ ActiveAdmin.setup do |config|
   #     without_comments.allow_comments = false
   #   end
 
-
   # == Batch Actions
   #
   # Enable and disable Batch Actions
   #
   config.batch_actions = true
-
 
   # == Controller Filters
   #
@@ -127,7 +122,6 @@ ActiveAdmin.setup do |config|
   config.before_filter do
     I18n.locale = params[:i18n_locale]
   end
-
 
   # == Register Stylesheets & Javascripts
   #
@@ -143,7 +137,6 @@ ActiveAdmin.setup do |config|
   #
   # To load a javascript file:
   #   config.register_javascript 'my_javascript.js'
-
 
   # == CSV options
   #
