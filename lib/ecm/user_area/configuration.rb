@@ -9,6 +9,13 @@ module Ecm
         yield self
       end
 
+      mattr_accessor :devise_modules do
+        [
+          :confirmable, :database_authenticatable, :lockable, :registerable,
+          :recoverable, :rememberable, :timeoutable, :trackable, :validatable
+        ]
+      end
+
       mattr_accessor :disable_registrations do
         false
       end

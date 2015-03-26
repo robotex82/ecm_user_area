@@ -28,8 +28,7 @@ class User < ActiveRecord::Base
 
   # Include default devise modules. Others available are:
   # :token_authenticatable and :omniauthable
-  devise(:confirmable, :database_authenticatable, :lockable, :registerable,
-         :recoverable, :rememberable, :timeoutable, :trackable, :validatable) if User.respond_to?(:devise)
+  devise(*Ecm::UserArea::Configuration.devise_modules) if User.respond_to?(:devise)
 
   # Setup accessible (or protected) attributes for your model
   if Rails::VERSION::MAJOR < 4
